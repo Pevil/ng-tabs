@@ -26,7 +26,39 @@ import { Component } from '@angular/core';
             <ng-template pvlTabPanel #characterPanel="pvlTabPanel"></ng-template>
         </div>
     `,
-    styles: [``]
+    styles: [`
+        ul {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            width: 20%;
+            text-align: center;
+            height: 48px;
+            line-height: 48px;
+            border: 1px solid grey;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        li.pvl-active-tab {
+            background-color: darkgrey;
+        }
+
+        li:hover {
+            background-color: grey;
+        }
+
+        .banner, .container {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+    `]
 })
 export class DemoComponent {
     bannerSrc: string = 'http://i.imgur.com/c7pfis6.jpg';

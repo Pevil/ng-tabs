@@ -14,7 +14,7 @@ import { TabStateService } from './tab-state.service';
 
 @Directive({ selector: '[pvlTab]' })
 export class TabDirective implements OnInit, OnDestroy {
-    @HostBinding('class.active-tab') active = false;
+    @HostBinding('class.pvl-active-tab') active = false;
     @ContentChild(TemplateRef) ref: TemplateRef<any>;
     @Input('tabId') id: string;
 
