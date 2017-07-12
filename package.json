@@ -1,0 +1,26 @@
+{
+  "name": "@pevil/ng-tabs",
+  "version": "1.0.0-beta",
+  "description": "Angular2+ UI directives for constructing tab interfaces",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pevil/ng-tabs.git"
+  },
+  "keywords": [
+    "angular2",
+    "angular",
+    "tabs",
+    "tab",
+    "ng"
+  ],
+  "author": "Peter Laraia",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Pevil/ng-tabs/issues"
+  },
+  "homepage": "https://github.com/Pevil/ng-tabs#readme"
+}
