@@ -4,7 +4,7 @@ import { createQueryList } from './utils';
 
 describe('TabGroup', () => {
     let tabGroup: TabGroupDirective;
-    let tabState: TabStateService
+    let tabState: TabStateService;
 
     beforeEach(() => {
         tabState = new TabStateService();
@@ -18,7 +18,7 @@ describe('TabGroup', () => {
             expect(tabGroup.tabs).not.toBeDefined();
             tabGroup.ngAfterContentInit();
             expect(spy.calls.count()).toBe(1);
-            expect(spy.calls.mostRecent().args[0]).toEqual('You haven\'t defined any tabs for this tabGroup!')
+            expect(spy.calls.mostRecent().args[0]).toEqual('You haven\'t defined any tabs for this tabGroup!');
         });
 
         it('should warn if tab id\'s not unique', () => {
@@ -28,7 +28,7 @@ describe('TabGroup', () => {
             expect(tabGroup.tabs.map(tab => tab.id)).toEqual(['abc', 'abc']);
             tabGroup.ngAfterContentInit();
             expect(spy.calls.count()).toBe(1);
-            expect(spy.calls.mostRecent().args).toEqual(['Tab ids must be unique!', ['abc', 'abc']])
+            expect(spy.calls.mostRecent().args).toEqual(['Tab ids must be unique!', ['abc', 'abc']]);
         });
 
         it('should error if no panel provided', () => {
@@ -37,7 +37,7 @@ describe('TabGroup', () => {
 
             tabGroup.ngAfterContentInit();
             expect(spy.calls.count()).toBe(1);
-            expect(spy.calls.mostRecent().args[0]).toEqual('[tabPanel] input is required!')
+            expect(spy.calls.mostRecent().args[0]).toEqual('[tabPanel] input is required!');
         });
 
         it('should initialize with first tab as default', () => {
@@ -48,7 +48,7 @@ describe('TabGroup', () => {
             tabGroup.ngAfterContentInit();
             expect(spy.calls.count()).toBe(1);
             expect(spy.calls.mostRecent().args[0]).toBe('a');
-        })
+        });
 
         it('should initialize with specified tab', () => {
             let spy = spyOn(tabState, 'initial');
@@ -58,8 +58,8 @@ describe('TabGroup', () => {
             tabGroup.ngAfterContentInit();
             expect(spy.calls.count()).toBe(1);
             expect(spy.calls.mostRecent().args[0]).toBe('a');
-        })
-    })
+        });
+    });
 
     describe('idsAreUnique()', () => {
         it('should indicate ids are unique', () => {
@@ -68,11 +68,11 @@ describe('TabGroup', () => {
 
         it('should indicate empty list as unique', () => {
             expect(tabGroup.idsAreUnique([])).toBeTruthy();
-        })
+        });
 
         it('should indicate duplicate ids as not unique', () => {
             expect(tabGroup.idsAreUnique(['a', 'c', 'a'])).toBeFalsy();
-        })
+        });
     });
 
     describe('setActiveTab()', () => {
@@ -92,6 +92,6 @@ describe('TabGroup', () => {
 
             tabGroup.setActiveTab('c');
             expect(spy.calls.count()).toBe(0);
-        })
+        });
     });
-})
+});

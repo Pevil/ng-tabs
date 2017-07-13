@@ -9,6 +9,6 @@ export const createQueryList = (state: TabStateService, ids: string[]): QueryLis
         tab.id = id;
         return tab;
     });
-    ql.reset(tabs)
+    ql.reset(tabs);
     return ql;
-} 
+}; 

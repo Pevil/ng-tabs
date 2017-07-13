@@ -63,6 +63,8 @@ As described above, we want to apply the pvlTab directive to each element that d
 
 The [tabId] input expects a string id, unique to the other tabs in this tab group.
 
+Whichever tab is active will have the css class `.pvl-active-tab` applied to it
+
 *pvlTabPanel*
 Apply this to an <ng-template> element, wherever you want the content defined by each tab to render. Also remember to grab a reference to the directive, in order to pass that as an input to the tabGroup directive (in our example, we did that with #putContentHere="pvlTabPanel")
 

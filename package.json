@@ -1,6 +1,6 @@
 {
   "name": "@pevil/ng-tabs",
-  "version": "1.0.0-beta",
+  "version": "1.0.0",
   "description": "Angular2+ UI directives for constructing tab interfaces",
   "main": "ng-tabs.umd.js",
   "module": "ng-tabs.es5.js",
@@ -10,7 +10,7 @@
     "pretest": "npm run build:test",
     "test": "karma start karma.conf.js",
     "posttest": "rimraf dist",
-    "lint": "tslint lib/**/*.ts test/**/*.ts",
+    "lint": "tslint lib/**/*.ts specs/**/*.ts",
     "clean:build": "rimraf build",
     "clean:demo": "rimraf demo/dist",
     "clean": "rimraf dist build demo/dist coverage",

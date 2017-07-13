@@ -80,13 +80,13 @@ module.exports = function(config) {
             thresholds: {
                 global: {
                     statements: 90,
-                    branches: 90,
+                    branches: 75,
                     lines: 90,
                     functions: 90
                 },
                 each: {
                     statements: 80,
-                    branches: 80,
+                    branches: 50,
                     lines: 80,
                     functions: 80
                 }
