@@ -25,11 +25,17 @@ export class TabGroupDirective implements AfterContentInit, OnDestroy {
     constructor(private tabState: TabStateService) { }
 
     ngAfterContentInit() {
-        if (!this.idsAreUnique(this.tabs.map((tab: TabDirective) => tab.id))) {
-            console.warn('tab ids must be unique!');
+        if (!this.tabs) {
+            console.error('You haven\'t defined any tabs for this tabGroup!');
+            return;
+        }
+        if (this.tabs && !this.idsAreUnique(this.tabs.map((tab: TabDirective) => tab.id))) {
+            console.warn('Tab ids must be unique!', this.tabs.map(tab => tab.id));
+            return;
         }
         if (!this.tabPanel) {
-            console.warn('[tabPanel] input is required!');
+            console.error('[tabPanel] input is required!');
+            return;
         }
         this.stateSub = this.tabState.activeTab.subscribe(this.setActiveTab.bind(this));
         this.tabState.initial(this.initialTabId || this.tabs.first.id);
@@ -40,6 +46,10 @@ export class TabGroupDirective implements AfterContentInit, OnDestroy {
             return;
         }
         const newTab: TabDirective = this.tabs.find((tab: TabDirective) => tab.id === id);
+        if (!newTab) {
+            console.warn(`Tried to set active tab to tab with id ${id}, but none was found`);
+            return;
+        }
 
         this.tabPanel.swapInTemplate(newTab.ref);
         this.activeTab = newTab;
