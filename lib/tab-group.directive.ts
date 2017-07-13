@@ -28,6 +28,9 @@ export class TabGroupDirective implements AfterContentInit, OnDestroy {
         if (!this.idsAreUnique(this.tabs.map((tab: TabDirective) => tab.id))) {
             console.warn('tab ids must be unique!');
         }
+        if (!this.tabPanel) {
+            console.warn('[tabPanel] input is required!');
+        }
         this.stateSub = this.tabState.activeTab.subscribe(this.setActiveTab.bind(this));
         this.tabState.initial(this.initialTabId || this.tabs.first.id);
     }

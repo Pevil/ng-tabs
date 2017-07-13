@@ -3,7 +3,7 @@
   "version": "1.0.0-beta",
   "description": "Angular2+ UI directives for constructing tab interfaces",
   "main": "ng-tabs.umd.js",
-  "module":"ng-tabs.es5.js",
+  "module": "ng-tabs.es5.js",
   "es2015": "ng-tabs.js",
   "types": "ng-tabs.d.ts",
   "scripts": {
@@ -32,7 +32,8 @@
     "transpile.demo": "tsc -p demo/tsconfig.json",
     "rollup.demo": "rollup -f iife -c demo/rollup.config.js -o demo/dist/bundle.es6.js",
     "build.demo": "npm run transpile.demo && npm run rollup.demo",
-    "postbuild.demo": "tsc --target es5 --allowJs demo/dist/bundle.es6.js --out demo/dist/bundle.js"
+    "postbuild.demo": "tsc --target es5 --allowJs demo/dist/bundle.es6.js --out demo/dist/bundle.js",
+    "build.all": "npm run build && npm run build.demo"
   },
   "repository": {
     "type": "git",
@@ -63,7 +64,6 @@
     "codelyzer": "^3.1.2",
     "core-js": "^2.4.1",
     "es6-shim": "^0.35.3",
-    "fs": "0.0.1-security",
     "fs-extra": "^3.0.1",
     "husky": "^0.14.3",
     "jasmine": "^2.6.0",
