@@ -54,14 +54,14 @@ For a more concrete example, see [here](https://github.com/Pevil/ng-tabs/blob/ma
 *pvlTabGroup*
 
 Use this to define a group of tabs that belong together. Here, we're defining an <ul> element as the group, where each
-child with the pvlTab directive (in this case each <li> element), is a part of this tabGroup.
+child with the pvlTab directive (in this case each \<li\> element), is a part of this tabGroup.
 
 The [tabPanel] input expects a reference to the panel where we want to render these tabs.
 The optional [initialTab] input expects a string matching the tabId of whichever tab should be displayed first. If none is provided, the first tab's contents will be the default.
 
 *pvlTab*
 
-As described above, we want to apply the pvlTab directive to each element that describes a tab. In this case we have 3 <li> elements, where the tabs themselves will display [View A, View B, View C]. Each element with a pvlTab directive also uses an <ng-template> to define the data that should be rendered in the panel when the tab is selected.
+As described above, we want to apply the pvlTab directive to each element that describes a tab. In this case we have 3 \<li\> elements, where the tabs themselves will display [View A, View B, View C]. Each element with a pvlTab directive also uses an <ng-template> to define the data that should be rendered in the panel when the tab is selected.
 
 The [tabId] input expects a string id, unique to the other tabs in this tab group.
 
