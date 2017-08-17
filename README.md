@@ -53,7 +53,7 @@ For a more concrete example, see [here](https://github.com/Pevil/ng-tabs/blob/ma
 
 *pvlTabGroup*
 
-Use this to define a group of tabs that belong together. Here, we're defining an <ul> element as the group, where each
+Use this to define a group of tabs that belong together. Here, we're defining an \<ul\> element as the group, where each
 child with the pvlTab directive (in this case each \<li\> element), is a part of this tabGroup.
 
 The [tabPanel] input expects a reference to the panel where we want to render these tabs.
@@ -69,7 +69,7 @@ Whichever tab is active will have the css class `.pvl-active-tab` applied to it
 
 *pvlTabPanel*
 
-Apply this to an <ng-template> element, wherever you want the content defined by each tab to render. Also remember to grab a reference to the directive, in order to pass that as an input to the tabGroup directive (in our example, we did that with #putContentHere="pvlTabPanel")
+Apply this to an \<ng-template\> element, wherever you want the content defined by each tab to render. Also remember to grab a reference to the directive, in order to pass that as an input to the tabGroup directive (in our example, we did that with #putContentHere="pvlTabPanel")
 
 ## Demo
 Run local demo by:
